@@ -1,11 +1,6 @@
 // write cool JS hwere!!
 
-import createClock from './modules/clock/clock.js';
-import createCounter from './modules/counter/counter.js';
-import randomDog from './modules/dog/randomDog.js';
+import CreateSearchComponent from './modules/search_component.js/search_component.js';
 
 
-createClock("clock")
-createCounter("count", 0)
-
-randomDog("dog")
+CreateSearchComponent('search')
