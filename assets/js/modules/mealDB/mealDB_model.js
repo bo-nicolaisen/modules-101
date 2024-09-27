@@ -1,14 +1,12 @@
 
 export default async function getAllProducts() {
-    console.log('getAllProducts');
-
 
 }
 
-
 export async function findProduct(searchString) {
+    console.log(searchString);
 
-    let searchURL = `https://dummyjson.com/products/search?q=${searchString}`
+    let searchURL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchString}`
 
     return fetch(searchURL)
         .then((response) => {
@@ -16,6 +14,8 @@ export async function findProduct(searchString) {
             if (!response.ok) {
                 throw new Error('Network response was not ok')
             }
+
+
             return response.json()
         })
         .then(data => {

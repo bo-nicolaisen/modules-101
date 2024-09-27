@@ -1,4 +1,9 @@
 
+// model imports
+//import { findProduct } from '../dummyJSON/dummyJSON_model.js'
+import { findProduct } from '../mealDB/mealDB_model.js'
+
+
 
 export default function CreateSearchComponent(id) {
 
@@ -21,6 +26,12 @@ function buildSearch(element) {
 function searchCallback() {
 
     let searchInput = document.getElementById('search-input')
-    console.log(searchInput.value);
+
+    // findProduct er asynkron så derfor .then og .catch
+    findProduct(searchInput.value)
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error(error))
 }
 
